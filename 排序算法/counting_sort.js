@@ -18,10 +18,9 @@ function countingSort(arr) {
   
   //申请一个存放排好序的元素的数组
   const resArr = new Array(arr.length);
-  
-  
   //遍历待排序的数组，
-  for (let i = 0; i < arr.length; i++) {
+  //从尾部开始遍历，保证排序算法的稳定性
+  for (let i = arr.length-1; i >= 0; i--) {
     //取出每一个元素应该存放的位置
     const index = countArr[arr[i]] - 1;
     resArr[index] = arr[i];
